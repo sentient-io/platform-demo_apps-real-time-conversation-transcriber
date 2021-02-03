@@ -58,10 +58,12 @@ const pagePopup = {
 
 // pagePopup.open({ title: 'test title', content: 'test content' });
 
-// Show loader
-pageLoader.show();
-// Calling new websocket when page loaded
-startNewWebsocket();
+// if (apikey !== 'ENTER YOUR API KEY') {
+// 	// Show loader
+// 	pageLoader.show();
+// 	// Calling new websocket when page loaded
+// 	startNewWebsocket();
+// }
 
 // Interval timer, sending audio blob to web socket
 let send_interval = null;
