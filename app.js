@@ -3,6 +3,9 @@ var apikey = 'ENTER YOUR API KEY';
 var apiendpointurl = 'https://api.sentient.io/demo-apps/prod/auth';
 var apicontentType = 'application/json';
 
+// Show loader
+pageLoader.show();
+
 fetchAPIKey = function fetchAPIKey() {
 	return new Promise((resolve, reject) => {
 		var xhr = new XMLHttpRequest(),
@@ -23,7 +26,7 @@ fetchAPIKey = function fetchAPIKey() {
 					apikey = JSON.parse(xhr.response).apikey;
 					resolve();
 				} else {
-					// Oh no! There has been an error with the request!
+					reject();
 				}
 			}
 		};
@@ -31,9 +34,11 @@ fetchAPIKey = function fetchAPIKey() {
 	});
 };
 
-fetchAPIKey().then(() => {
-	// Show loader
-	pageLoader.show();
-	// Calling new websocket when page loaded
-	startNewWebsocket();
-});
+fetchAPIKey()
+	.then(() => {
+		// Calling new websocket when page loaded
+		startNewWebsocket();
+	})
+	.catch(() => {
+		alert('Error');
+	});
