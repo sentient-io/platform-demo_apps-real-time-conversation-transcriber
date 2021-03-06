@@ -342,17 +342,10 @@ button:focus {
 	align-items: center;
 	justify-content: space-around;
 	/*  */
-	max-width: 1400px;
 	width: 100%;
 	padding: 2rem 4rem;
 	/* Color */
 	background-color: white;
-}
-
-.s-footer__left {
-}
-
-.s-footer__right {
 }
 
 .s-link {

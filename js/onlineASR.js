@@ -1,14 +1,14 @@
-const online_asr_connection_data = {
-	'x-api-key': apikey,
-	action: 'start',
-	model: 'en-SG-conversation',
-	'sampling-rate': 16000,
-};
-
 // Initialize webSocket global variable
 let webSocket;
 
 startNewWebsocket = function startNewWebsocket() {
+	const online_asr_connection_data = {
+		'x-api-key': apikey,
+		action: 'start',
+		model: 'en-SG-conversation',
+		'sampling-rate': 16000,
+	};
+
 	// Create new webSocket
 	webSocket = new WebSocket('wss://onlineasr.sentient.io');
 
